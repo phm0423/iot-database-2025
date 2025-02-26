@@ -93,10 +93,12 @@ IoT 개발자 데이터베이스 저장소
             +--------------------+
             4 rows in set (0.02 sec)
         ```
+
+<img src='./img/db001.png' width = '700'>
+
 - Workbench 다운
     - https://dev.mysql.com/downloads/workbench/
     - MySQL Installer에서 Workbench, Sample만 설치
-
     - Workbench 실행후
         1. MySQL Connectoins + 클릭
 
@@ -114,8 +116,8 @@ IoT 개발자 데이터베이스 저장소
 
 - SQL 기초
     - SQL 개요
-
     ```sql
+    -- DML SELECT문
     SELECT publisher, price
       FROM Book
      WHERE bookname = '축구의 역사'; -- 주석입니다
@@ -123,4 +125,37 @@ IoT 개발자 데이터베이스 저장소
 
 ## 2일차
 - SQL 기초
-    - ...
+    - 개요
+        - 데이터베이스에 있는 데이터를 추출 및 처리작업을 위해서 사용되는 프로그래밍 언어
+        - 일반프로그래밍언어와 차이점
+            - DB에서만 문제 해결가능
+            - 입출력을 모두 DB에서 테이블로 처리작업
+            - 컴파일 및 실행은 DBMS가 수행
+        - DML(데이터 조작어) - 검색, 삽입, 수정, 삭제
+            - SELECT, INSERT, UPDATA, DELETE
+        - DDL(데이터 정의어)
+            - CREATE, ALTER, DROP
+        - DML(데이터 조작어)
+            - GRANT, REVOKE
+
+    - DML 중 SELECT
+
+        ```sql
+        -- SELECT문 기본문법
+        SELECT [ALL|DISTINCT] 컬럼명(들)
+          FROM 테이블명(들)
+         [WHERE 검색조건(들)]
+         [GROUP BY 속성이름(들)]
+         [HAVING 집계함수검색조건(들)]
+         [ORDER BY 정렬할속성(들)[ASC|DESC]]
+         [WITH ROLLUP]
+        ```
+
+        - 쿼리 연습(정렬까지) : [SQL](./day02/da02_select_쿼리연습.sql)
+        - 쿼리 연습(집계함수부터) : [SQL](./day02/da03_select_집계함수부터.sql)
+
+## 3일차
+- SQL 기초
+    - DDL
+    - DML 중 INSERT, UPDATE, DELETE
+- SQL 고급
