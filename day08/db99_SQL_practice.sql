@@ -87,12 +87,3 @@ select concat(first_name, ' ', last_name, ' is a ', upper(job_id)) as 'Employee 
   from employees
  where last_name like '%s';
  
-/* 문제2 - 모든 사원의 연봉을 표시하는 보고서. 사원의 성과 이름(Name), 급여, 수당 여부 따른 연봉 포함 출력
-			수당이 있으면 'Salary + Commission', 수당이 없으면 'Salary Only'라 표시, 별칭은 적절히. 연봉 높은순 정렬(107행)
-*/
-select concat(first_name, ' ', last_name) as 'Name'
-	 , salary
-     , (salary * (1+commission_pct))*12 as 'Annual Salary'
-  from employees
- where salary
- order by salary desc;
